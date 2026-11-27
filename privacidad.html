@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FFF9EE" />
+    <meta name="robots" content="index, follow" />
+    <title>Política de privacidad · LogiGrid</title>
+    <!--
+      Es un archivo autónomo: no necesita CSS, JavaScript ni imágenes externas, así que puedes subirlo solo a
+      cualquier alojamiento estático (GitHub Pages, Netlify, Cloudflare Pages, tu dominio…).
+
+      El responsable del tratamiento está en CONFIG (más abajo): Gisela Pelroso,
+      Argentina, sanel2191@gmail.com. Si cambia el titular o el correo, actualiza
+      también la fecha de revisión, la ficha de Play y la declaración de seguridad.
+
+      La URL pública de esta página es la que se pega en Play Console →
+      Contenido de la app → Política de privacidad, y también en la ficha.
+    -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFFDF7'/%3E%3Crect x='12' y='12' width='17' height='17' rx='5' fill='%23FF6B5E'/%3E%3Crect x='35' y='12' width='17' height='17' rx='5' fill='%23FFC94A'/%3E%3Crect x='12' y='35' width='17' height='17' rx='5' fill='%2343C5A5'/%3E%3Crect x='35' y='35' width='17' height='17' rx='5' fill='%235AA9E6'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --ink: #25303b;
+        --ink-soft: #5b6a76;
+        --paper: #fff9ee;
+        --paper-2: #fffdf7;
+        --coral: #ff6b5e;
+        --sun: #ffc94a;
+        --font-display: 'Baloo 2', 'Trebuchet MS', system-ui, sans-serif;
+        --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--font-body);
+        -webkit-text-size-adjust: 100%;
+      }
+      .privacy {
+        width: min(100% - 32px, 720px);
+        margin: 0 auto;
+        padding: 26px 0 56px;
+      }
+      .privacy__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .privacy__brand {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .privacy__langs { display: flex; gap: 6px; }
+      .privacy__langs button {
+        padding: 6px 11px;
+        font-family: inherit;
+        font-size: 0.68rem;
+        font-weight: 800;
+        color: var(--ink);
+        background: var(--paper-2);
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        box-shadow: 0 2px 0 var(--ink);
+        cursor: pointer;
+      }
+      .privacy__langs button.is-on { background: var(--sun); }
+      h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(1.7rem, 5vw, 2.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      .privacy__updated {
+        margin: 6px 0 0;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--ink-soft);
+      }
+      .privacy__section {
+        margin-top: 18px;
+        padding: 14px 16px;
+        background: var(--paper-2);
+        border: 2px solid var(--ink);
+        border-radius: 16px;
+        box-shadow: 0 4px 0 var(--ink);
+      }
+      .privacy__section h2 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        line-height: 1.2;
+      }
+      .privacy__section p {
+        margin: 8px 0 0;
+        font-size: 0.85rem;
+        line-height: 1.55;
+      }
+      .privacy__section a { color: var(--coral); font-weight: 800; }
+      .privacy__foot { display: flex; justify-content: center; margin-top: 26px; }
+      .privacy__foot a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-weight: 800;
+        color: #fff;
+        text-decoration: none;
+        background: var(--ink);
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        box-shadow: 0 4px 0 rgba(37, 48, 59, 0.35);
+      }
+      code {
+        font-size: 0.85em;
+        padding: 1px 5px;
+        background: rgba(37, 48, 59, 0.08);
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="privacy">
+      <header class="privacy__head">
+        <a class="privacy__brand" href="./">LogiGrid</a>
+        <div class="privacy__langs" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es">Español</button>
+          <button type="button" data-lang="en">English</button>
+        </div>
+      </header>
+
+      <h1 data-i18n="title">Política de privacidad</h1>
+      <p class="privacy__updated" data-i18n="updated"></p>
+
+      <div data-i18n-body></div>
+
+      <footer class="privacy__foot">
+        <a href="./" data-i18n="back">Volver a LogiGrid</a>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        // ------------------------------------------------------------------
+        // DATOS DEL RESPONSABLE
+        // ------------------------------------------------------------------
+        var CONFIG = {
+          controller: 'Gisela Pelroso',
+          country: 'Argentina',
+          email: 'sanel2191@gmail.com',
+        };
+        var VERSION = '1.3.0';
+
+        var COPY = {
+          es: {
+            title: 'Política de privacidad',
+            updated: 'Última actualización: 27 de noviembre de 2026 · versión ' + VERSION,
+            back: 'Volver a LogiGrid',
+            sections: [
+              {
+                h: '1. Quién es el responsable',
+                p: [
+                  'LogiGrid es un juego de puzles para Android y para navegador. Lo desarrolla y publica ' +
+                    CONFIG.controller +
+                    ', con residencia en ' +
+                    CONFIG.country +
+                    ', que es el responsable del tratamiento de los datos descritos en esta política.',
+                  'Contacto para privacidad y soporte: <a href="mailto:' +
+                    CONFIG.email +
+                    '">' +
+                    CONFIG.email +
+                    '</a>.',
+                  'Esta política se aplica a la aplicación de Android (paquete <code>com.rombos.app</code>) y a la versión web del juego.',
+                ],
+              },
+              {
+                h: '2. Datos que se guardan en tu dispositivo',
+                p: [
+                  'LogiGrid no tiene cuentas ni servidores propios: no hay registro, no hay inicio de sesión y tu progreso no se envía al desarrollador. Todo se guarda en el almacenamiento local del dispositivo (el <code>localStorage</code> del navegador o del WebView): nivel y progreso, monedas, récords y estadísticas de partidas, logros, racha y regalo diario, mejoras usadas, idioma, ajustes de sonido y vibración y tus preferencias.',
+                  'No se guardan nombres, correos electrónicos, contactos, fotos, ubicación, datos de salud ni ningún dato que permita identificarte. LogiGrid tampoco lee nada de tu dispositivo fuera de su propio almacenamiento.',
+                  'Si escribes al correo de contacto, el responsable tratará tu dirección y el contenido del mensaje solo para responderte y durante el tiempo necesario para gestionar la consulta.',
+                  'Los datos de juego no se envían al desarrollador ni a terceros; la única comunicación con un tercero es la del SDK de anuncios descrita en el apartado 3. Si borras el progreso desde Ajustes, desinstalas la app o limpias los datos del navegador, se eliminan de forma definitiva. El botón «Borrar progreso» reinicia niveles, monedas, récords, logros y estadísticas, y conserva el idioma, los ajustes de sonido y tus preferencias.',
+                ],
+              },
+              {
+                h: '3. Anuncios',
+                p: [
+                  'LogiGrid es gratuito y se financia con anuncios. La app para Android (' + VERSION + ') incluye el SDK de Google Mobile Ads (AdMob), que carga banners, intersticiales, anuncios recompensados y anuncios de apertura. En esta versión los anuncios se sirven como <b>anuncios de prueba de Google</b>: aparecen con la etiqueta «Test Ad», no generan ingresos y no cuentan como tráfico publicitario real, pero el SDK está activo y puede tratar los datos que se describen a continuación.',
+                  'Para servir y medir los anuncios, el SDK de Google puede recoger tu identificador de publicidad (<code>AD_ID</code>), tu dirección IP (que permite estimar una ubicación aproximada), datos del dispositivo y de la app (modelo, sistema operativo, idioma y versión), tus interacciones con los anuncios (impresiones y clics) y datos de diagnóstico y rendimiento. El responsable no recibe esos datos ni los usa para identificarte; los trata Google como proveedor publicitario conforme a su propia política: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a>.',
+                  'Antes de cargar anuncios, la app pide el consentimiento con el formulario de Google (UMP) en el Espacio Económico Europeo, el Reino Unido y Suiza, y con su propio aviso en el resto de regiones. Quien acepta recibe anuncios personalizados; quien elige solo lo imprescindible recibe anuncios no personalizados. Puedes cambiar o retirar esa decisión en Ajustes → Anuncios, que vuelve a abrir el formulario de Google.',
+                  'La versión web no carga anuncios reales: solo muestra creativos de ejemplo dibujados por la propia app, sin SDK ni peticiones a anunciantes. LogiGrid no vende datos personales y no comparte datos de juego con terceros.',
+                ],
+              },
+              {
+                h: '4. Monedas y compras',
+                p: [
+                  'LogiGrid es gratuito y no tiene compras dentro de la app, suscripciones ni pagos reales. Las monedas y las mejoras son elementos virtuales sin valor monetario: no se compran con dinero, no se canjean y no se pueden transferir.',
+                ],
+              },
+              {
+                h: '5. Alojamiento y servicios externos',
+                p: [
+                  'Las tipografías Baloo 2 y Nunito van incluidas en la app y se cargan desde el propio dispositivo; no se solicita ninguna fuente a Google ni a otro tercero. La versión web se sirve desde el alojamiento que elija el responsable. Ese proveedor puede registrar direcciones IP en sus registros técnicos de seguridad y funcionamiento, conforme a su propia política; el responsable no recibe ni usa esos registros para identificar a los jugadores.',
+                  'LogiGrid no usa cookies propias, ni herramientas de analítica, ni rastreo entre aplicaciones. La app de Android no se conecta a servidores del desarrollador: la única conexión externa es el SDK de Google Mobile Ads (apartado 3), que pide anuncios a Google. La portada puede abrir desde la caché, pero las partidas requieren conexión porque esta versión funciona en modo online.',
+                ],
+              },
+              {
+                h: '6. Menores',
+                p: [
+                  'LogiGrid no está dirigida a menores de 13 años. La ficha de Play declara una audiencia de 13 años o más y la app no se marca como aplicación infantil. No se solicitan nombres, correos ni datos identificativos para jugar, y no hay compras. Si en el futuro se dirige a menores, se aplicarán los controles de edad y publicidad que exijan la normativa y la política de familias de Google Play.',
+                ],
+              },
+              {
+                h: '7. Tus derechos',
+                p: [
+                  'Como los datos de juego se guardan solo en tu dispositivo, puedes consultarlos y eliminarlos directamente: el botón «Borrar progreso» de Ajustes elimina el progreso y los récords; borrar los datos del sitio o desinstalar la app elimina todo, incluidos el idioma y las preferencias.',
+                  'Si resides en el Espacio Económico Europeo, el Reino Unido o Suiza, tienes derecho a solicitar acceso, rectificación, supresión, limitación del tratamiento, oposición y portabilidad de tus datos, y a retirar cualquier consentimiento. Como los datos de juego están solo en tu dispositivo, puedes ejercer el acceso y la supresión con los controles indicados. Para cualquier solicitud, escribe a ' +
+                    CONFIG.email +
+                    '. También puedes reclamar ante tu autoridad de protección de datos: en la Unión Europea, la autoridad del país donde residas; en el Reino Unido, la ICO (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>).',
+                  'Si resides en Argentina, la Ley 25.326 de Protección de Datos Personales te reconoce los derechos de acceso, rectificación, actualización y supresión de tus datos. Puedes ejercerlos escribiendo a ' +
+                    CONFIG.email +
+                    ', indicando qué derecho solicitas; la respuesta se dará en los plazos que fija esa ley. El organismo de control es la Agencia de Acceso a la Información Pública (AAIP, <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener">argentina.gob.ar/aaip</a>).',
+                  'El consentimiento publicitario se pide al abrir la app y puedes cambiarlo o retirarlo cuando quieras en Ajustes → Anuncios, que vuelve a abrir el formulario de Google (UMP). También puedes restablecer o eliminar tu identificador de publicidad desde los ajustes de Android (Google → Anuncios).',
+                  'LogiGrid no vende datos personales.',
+                ],
+              },
+              {
+                h: '8. Base jurídica y transferencias',
+                p: [
+                  'El almacenamiento técnico de tu progreso y preferencias es necesario para prestarte el servicio que solicitas (art. 6.1.b del RGPD y la norma equivalente del Reino Unido). Los registros técnicos del proveedor de alojamiento web, si existen, se basan en su interés legítimo en mantener el sitio seguro y operativo (art. 6.1.f). Los correos de soporte se tratan para atender tu solicitud (art. 6.1.b o f) y se conservan el tiempo necesario para resolverla. No se usan para publicidad ni para elaborar perfiles.',
+                  'Los anuncios se basan en tu consentimiento (art. 6.1.a del RGPD), que se recoge con el formulario de Google antes de cargar el primer anuncio y puedes retirar en Ajustes → Anuncios. Si eliges solo lo imprescindible, se sirven anuncios no personalizados y la base es el interés legítimo en financiar la app sin elaborar perfiles publicitarios.',
+                  'No se tratan categorías especiales de datos ni se toman decisiones automatizadas con efectos jurídicos. El responsable no vende datos. No realiza transferencias internacionales propias; si el proveedor de alojamiento, de correo o de publicidad (Google) las realiza, debe ampararlas en una decisión de adecuación o en cláusulas contractuales tipo.',
+                  'Como el responsable reside en Argentina, a los tratamientos que realice desde ese país se aplica además la Ley 25.326 de Protección de Datos Personales y sus normas complementarias. LogiGrid no envía los datos de juego a servidores propios, así que el tratamiento desde Argentina se limita a los correos que decidas enviar al contacto de soporte.',
+                ],
+              },
+              {
+                h: '9. Conservación y seguridad',
+                p: [
+                  'Los datos de juego se conservan mientras no borres el progreso o los datos de la app. Los registros técnicos del alojamiento web, si existen, se conservan según la política de ese proveedor. LogiGrid no transmite tu progreso a servidores propios; aun así, protege tu dispositivo con bloqueo de pantalla y mantén la app actualizada.',
+                ],
+              },
+              {
+                h: '10. Cambios en esta política',
+                p: [
+                  'Si cambian los datos tratados o la forma de financiar la app, se actualizará esta página y la fecha de revisión. Los cambios importantes se avisarán dentro de la app antes de aplicarse. Esta versión (' + VERSION + ') incluye el SDK de Google Mobile Ads y sirve anuncios de prueba.',
+                ],
+              },
+            ],
+          },
+          en: {
+            title: 'Privacy policy',
+            updated: 'Last updated: 27 November 2026 · version ' + VERSION,
+            back: 'Back to LogiGrid',
+            sections: [
+              {
+                h: '1. Who is responsible',
+                p: [
+                  'LogiGrid is a puzzle game for Android and the web. It is developed and published by ' +
+                    CONFIG.controller +
+                    ', resident in ' +
+                    CONFIG.country +
+                    ', who is the controller of the data described in this policy.',
+                  'Privacy and support contact: <a href="mailto:' +
+                    CONFIG.email +
+                    '">' +
+                    CONFIG.email +
+                    '</a>.',
+                  'This policy applies to the Android app (package <code>com.rombos.app</code>) and to the web version of the game.',
+                ],
+              },
+              {
+                h: '2. Data stored on your device',
+                p: [
+                  'LogiGrid has no accounts and no servers of its own: there is no sign-up, no login and your progress is never sent to the developer. Everything is stored in the device’s local storage (the browser or WebView <code>localStorage</code>): level and progress, coins, records and play statistics, achievements, daily streak and gift, boosts used, language, sound and vibration settings and your preferences.',
+                  'No names, email addresses, contacts, photos, location, health data or any identifying data are stored. LogiGrid does not read anything on your device outside its own storage.',
+                  'If you write to the contact email, the controller will process your address and the content of the message only to reply and for the time needed to handle the request.',
+                  'Game data is not sent to the developer or to third parties; the only third-party communication is the advertising SDK described in section 3. If you erase your progress in Settings, uninstall the app or clear your browser data, it is permanently deleted. “Erase progress” resets levels, coins, records, achievements and statistics, and keeps the language, sound settings and your preferences.',
+                ],
+              },
+              {
+                h: '3. Ads',
+                p: [
+                  'LogiGrid is free and funded by ads. The Android app (' + VERSION + ') includes the Google Mobile Ads SDK (AdMob), which loads banner, interstitial, rewarded and app-open ads. In this version ads are served as <b>Google test ads</b>: they show the “Test Ad” label, generate no revenue and do not count as real ad traffic, but the SDK is active and may process the data described below.',
+                  'To serve and measure ads, Google’s SDK may collect your advertising ID (<code>AD_ID</code>), your IP address (which can estimate an approximate location), device and app data (model, operating system, language, version), your interactions with ads (impressions and clicks) and diagnostic and performance data. The controller does not receive that data or use it to identify you; Google processes it as an advertising provider under its own policy: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a>.',
+                  'Before loading ads, the app asks for consent with Google’s form (UMP) in the European Economic Area, the United Kingdom and Switzerland, and with its own notice elsewhere. If you accept, you get personalized ads; if you choose essential-only, you get non-personalized ads. You can change or withdraw that choice in Settings → Ads, which reopens Google’s form.',
+                  'The web version loads no real ads: it only shows sample creatives drawn by the app itself, with no SDK and no requests to advertisers. LogiGrid does not sell personal data and does not share game data with third parties.',
+                ],
+              },
+              {
+                h: '4. Coins and purchases',
+                p: [
+                  'LogiGrid is free and has no in-app purchases, subscriptions or real-money payments. Coins and boosts are virtual items with no monetary value: they cannot be bought with money, redeemed or transferred.',
+                ],
+              },
+              {
+                h: '5. Hosting and external services',
+                p: [
+                  'Baloo 2 and Nunito fonts are included in the app and load from the device itself; no font is requested from Google or any other third party. The web version is served from the hosting chosen by the controller. That provider may log IP addresses for security and operation under its own policy; the controller does not receive or use those logs to identify players.',
+                  'LogiGrid uses no first-party cookies, no analytics and no cross-app tracking. The Android app does not connect to developer servers: the only outside connection is the Google Mobile Ads SDK (section 3), which requests ads from Google. The home screen can open from the cache, but games require a connection because this version runs online.',
+                ],
+              },
+              {
+                h: '6. Children',
+                p: [
+                  'LogiGrid is not directed at children under 13. The Play listing declares an audience of 13 and over and the app is not marked as child-directed. No name, email or identifying data is requested to play, and there are no purchases. If it is ever directed at children, the age and advertising controls required by law and Google Play’s Families policy will apply.',
+                ],
+              },
+              {
+                h: '7. Your rights',
+                p: [
+                  'Because game data is stored only on your device, you can inspect and delete it directly: “Erase progress” in Settings deletes progress and records; clearing site data or uninstalling the app deletes everything, including language and preferences.',
+                  'If you live in the European Economic Area, the United Kingdom or Switzerland, you have the right to request access, rectification, erasure, restriction, objection and portability of your data, and to withdraw any consent. Because game data is only on your device, you can exercise access and erasure with the controls above. For any request, write to ' +
+                    CONFIG.email +
+                    '. You can also complain to your data protection authority: in the European Union, the authority of the country where you live; in the United Kingdom, the ICO (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>).',
+                  'If you live in Argentina, the Personal Data Protection Act (Ley 25.326) gives you the rights of access, rectification, updating and deletion of your data. You can exercise them by writing to ' +
+                    CONFIG.email +
+                    ', stating which right you are requesting; the reply will be given within the periods set by that law. The supervisory body is the Agency for Access to Public Information (AAIP, <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener">argentina.gob.ar/aaip</a>).',
+                  'Advertising consent is requested when you open the app and you can change or withdraw it at any time in Settings → Ads, which reopens Google’s form (UMP). You can also reset or delete your advertising ID in the Android settings (Google → Ads).',
+                  'LogiGrid does not sell personal data.',
+                ],
+              },
+              {
+                h: '8. Legal basis and transfers',
+                p: [
+                  'Technical storage of your progress and preferences is necessary to provide the service you request (Art. 6(1)(b) GDPR and the equivalent UK rule). Technical logs of the web hosting provider, if any, are based on its legitimate interest in keeping the site secure and operational (Art. 6(1)(f)). Support emails are processed to answer your request (Art. 6(1)(b) or (f)) and kept for the time needed to resolve it. They are not used for advertising or profiling.',
+                  'Ads rely on your consent (Art. 6(1)(a) GDPR), collected with Google’s form before the first ad loads and withdrawable in Settings → Ads. If you choose essential-only, non-personalized ads are served on the basis of the legitimate interest in funding the app without building advertising profiles.',
+                  'No special categories of data are processed and no automated decisions with legal effects are made. The controller does not sell data. It does not make international transfers of its own; if the hosting, email or advertising provider (Google) does, it must rely on an adequacy decision or standard contractual clauses.',
+                  'Because the controller lives in Argentina, the Argentine Personal Data Protection Act (Ley 25.326) and its supplementary rules also apply to processing carried out from that country. LogiGrid does not send game data to its own servers, so processing from Argentina is limited to the emails you choose to send to the support contact.',
+                ],
+              },
+              {
+                h: '9. Retention and security',
+                p: [
+                  'Game data is kept until you erase your progress or the app’s data. Technical logs of the web host, if any, are retained under that provider’s policy. LogiGrid does not send your progress to its own servers; still, protect your device with a screen lock and keep the app up to date.',
+                ],
+              },
+              {
+                h: '10. Changes to this policy',
+                p: [
+                  'If the data processed changes or the way the app is funded changes, this page and its revision date will be updated. Important changes will be announced inside the app before they apply. This version (' + VERSION + ') includes the Google Mobile Ads SDK and serves test ads.',
+                ],
+              },
+            ],
+          },
+        };
+
+        var lang = new URLSearchParams(location.search).get('lang') || navigator.language || 'es';
+        lang = /^en/i.test(lang) ? 'en' : 'es';
+        var copy = COPY[lang];
+        document.documentElement.lang = lang;
+        document.title = copy.title + ' · LogiGrid';
+        document.querySelectorAll('[data-i18n]').forEach(function (node) {
+          node.textContent = copy[node.dataset.i18n];
+        });
+        document.querySelector('[data-i18n-body]').innerHTML = copy.sections
+          .map(function (section) {
+            return (
+              '<section class="privacy__section"><h2>' +
+              section.h +
+              '</h2>' +
+              section.p
+                .map(function (text) {
+                  return '<p>' + text + '</p>';
+                })
+                .join('') +
+              '</section>'
+            );
+          })
+          .join('');
+        document.querySelectorAll('[data-lang]').forEach(function (button) {
+          button.classList.toggle('is-on', button.dataset.lang === lang);
+          button.addEventListener('click', function () {
+            var url = new URL(location.href);
+            url.searchParams.set('lang', button.dataset.lang);
+            location.href = url.toString();
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
